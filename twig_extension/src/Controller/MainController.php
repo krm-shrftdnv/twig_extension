@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class MainController extends AbstractController
 {
-    private static array $names = [];
+    static private array $names = [];
 
     /**
      * @Route("/{page}", methods = "[GET, POST]", name="spa", requirements = {"page"="^((?!api/)(?!static/)(?!icon.svg)).*$"})
