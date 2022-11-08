@@ -31,9 +31,3 @@ services:
 # Controllers
 
 # Services
-
-#twig extensions
-    app.twig.transliteration_extension:
-        class: App\Twig\TransliterationExtension
-        tags:
-            - { name: twig.extension }

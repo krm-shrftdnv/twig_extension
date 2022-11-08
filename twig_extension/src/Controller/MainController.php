@@ -5,13 +5,14 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
 
 class MainController extends AbstractController
 {
     private static array $names = [];
 
     /**
-     * @Route("/{page}", methods = ['GET', 'POST'], name="spa", requirements = {"page"="^((?!api/)(?!static/)(?!icon.svg)).*$"})
+     * @Route("/{page}", methods = "[GET, POST]", name="spa", requirements = {"page"="^((?!api/)(?!static/)(?!icon.svg)).*$"})
      */
     public function index(): Response
     {

@@ -5,12 +5,10 @@ services:
     container_name: php-fpm
     build:
       context: ./php-fpm
-    depends_on:
-      - db
     volumes:
       - ./../twig_extension/:/var/www
     env_file:
-      - .env
+      - ./../.env
 
   nginx:
     container_name: nginx
