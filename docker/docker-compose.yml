@@ -7,8 +7,6 @@ services:
       context: ./php-fpm
     volumes:
       - ./../twig_extension/:/var/www
-    env_file:
-      - ./../.env
 
   nginx:
     container_name: nginx
