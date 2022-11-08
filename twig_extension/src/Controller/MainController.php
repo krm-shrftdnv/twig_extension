@@ -17,8 +17,11 @@ class MainController extends AbstractController
     public function index(): Response
     {
         $request = Request::createFromGlobals();
-        if ($request->getMethod() === 'POST' && $request->request->has('name')) {
-            self::$names[] = $request->request->get('name');
+        if ($request->getMethod() === 'POST' && $request->request->has('names')) {
+            $names = $request->request->get('names');
+            if (count($names)>0 && is_array($names)) {
+                self::$names = $names;
+            }
         }
         return $this->render('base.html.twig', ['names' => self::$names]);
     }

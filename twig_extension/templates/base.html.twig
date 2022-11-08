@@ -8,16 +8,17 @@
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body>
-<h2>Пример транслитерации</h2>
-<ul>
-    {% for name in names %}
-    <li>{{ name }} - {{ name|translit }}</li>
-    {% endfor %}
-</ul>
-<form action="/main" method="post">
+<h2>Примеры транслитерации</h2>
+<form action="/" method="post">
+    <ul>
+        {% for name in names %}
+            <input type="hidden" value="{{ name }}" name="names[]">
+            <li>{{ name }} - {{ name|translit }}</li>
+        {% endfor %}
+    </ul>
     <label>
         Добавить пример:
-        <input type="text" name="name">
+        <input type="text" name="names[]">
     </label>
     <input type="submit" value="Добавить">
 </form>
